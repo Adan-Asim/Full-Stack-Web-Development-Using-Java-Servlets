@@ -1,0 +1,49 @@
+<html>
+	<head>	
+		<title> SignUp </title>
+		<style>
+			body
+			{
+				border: 2px solid white;
+				width: 32%;
+				height: 28%;
+				margin-top: 14%;
+				margin-left: 33.5%;	
+				background-image:url('bg.png');
+     				background-size:large;
+				color: white;
+				font-size:110%;
+			}
+		</style>
+		<script>
+			function check()
+			{
+				if(document.getElementById("email").value == "" || document.getElementById("password").value ==  "" )			
+				{
+					alert("Please fill all fields");	
+					return false;
+				}
+				else
+				{
+					n1 = document.getElementById('email').value.indexOf('@'); 
+					n2 = document.getElementById('email').value.indexOf('.');
+					if((n1>=1) && ((n2-n1)>1) && (document.getElementById('email').value.length - n2 >1));
+					else
+					{
+						alert("Email address not correct, must look like this x@x.x");
+						return false;
+					}
+				}
+				return true;
+			}
+		</script>
+
+	</head>
+	<body>	
+		<h1 style = "text-align:center; margin-top: 6%; margin-left:%">SignUp Options</h1>
+		<hr>
+		<a href = "SignUpTeacher.html" style = "text-decoration:none; "><button style = "margin-top: 7%;margin-left: 6.5%">SignUp as Teacher</button></a>
+		<a href = "SignUpStudent.html" style = "text-decoration:none;"><button style = "margin-left: 2%">SignUp as Student</button></a>
+		<a href = "1-SignIn.html" style = "text-decoration:none;"><button style = "margin-left: 2%">SignIn instead</button></a>
+	</body>
+</html>

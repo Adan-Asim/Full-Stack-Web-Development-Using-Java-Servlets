@@ -1,0 +1,54 @@
+<html>
+	<head>	
+		<title> SignUp Teacher </title>
+		<style>
+			body
+			{
+				border: 2px solid white;
+				width: 32%;
+				height: 70%;
+				margin-top: 8%;
+				margin-left: 34%;	
+				background-image:url('bg.png');
+     				background-size:large;
+				color: white;
+				font-size: 100%;
+			}
+		</style>
+		<script>
+			function check()
+			{
+				if(document.getElementById("email").value == "" || document.getElementById("nm").value ==  ""  || document.getElementById("password").value == "" || document.getElementById("phone_no").value == "")			
+				{
+					alert("Please fill all fields");	
+					return false;
+				}
+				n1 = document.getElementById('email').value.indexOf('@'); 
+				n2 = document.getElementById('email').value.indexOf('.');
+				if((n1>=1) && ((n2-n1)>1) && (document.getElementById('email').value.length - n2 >1));
+				else
+				{
+					alert("Email address not correct, must look like this x@x.x");
+					return false;
+				}
+				return true;
+			}
+		</script>
+
+	</head>
+	<body>	
+		<h1 style = "text-align:center; margin-top: 5%; margin-left:2.5%">SignUp Form</h1>
+		<hr>
+		<form action = "SignUpServlet" method = "POST">
+		<ul ><h2 style = "text-align:center; margin-left:-8%">SignUp as a Teacher</h2>				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		         Email : <input type = "text" name = "email" id = "email" style = "margin-left:12%;margin-top:3%;"><br>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		         Name : <input type = "text" name = "nm" id = "nm" style = "margin-left:12%;margin-top:3%;"><br>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		         Password : <input type = "text" name = "password" id = "password" style = "margin-top:3%;margin-left: 6%"><br>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		         Phone No.: <input type = "text" name = "phone_no" id = "phone_no" style = "margin-top:3%;margin-left:5.5%;"><br>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		         User Type: <input type = "number" name = "user_type" id = "user_type" value = 2 style = "margin-top:3%;margin-left: 6%" readonly>	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
+		</ul>	
+		<input type = "submit" value = "SignUp" onClick = "return check()" style = "margin-left:43%; margin-top:3%">
+		<a href = "1-SignIn.html" style = "text-decoration:none;color:black"><button style = "margin-left:38%; margin-top:3%; color:black">SignIn Instead</a></button>	
+		</form>
+	</body>
+</html>

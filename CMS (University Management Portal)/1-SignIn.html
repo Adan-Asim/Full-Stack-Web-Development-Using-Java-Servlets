@@ -1,0 +1,53 @@
+<html>
+	<head>	
+		<title> SignIn </title>
+		<style>
+			body
+			{
+				border: 2px solid white;
+				width: 32%;
+				height: 53%;
+				margin-top: 11%;
+				margin-left: 34%;	
+				background-image:url('bg.png');
+     				background-size:large;
+				color: white;
+			}
+		</style>
+		<script>
+			function check()
+			{
+				if(document.getElementById("email").value == "" || document.getElementById("password").value ==  "" )			
+				{
+					alert("Please fill all fields");	
+					return false;
+				}
+				else
+				{
+					n1 = document.getElementById('email').value.indexOf('@'); 
+					n2 = document.getElementById('email').value.indexOf('.');
+					if((n1>=1) && ((n2-n1)>1) && (document.getElementById('email').value.length - n2 >1));
+					else
+					{
+						alert("Email address not correct, must look like this x@x.x");
+						return false;
+					}
+				}
+				return true;
+			}
+		</script>
+
+	</head>
+	<body>	
+		<h1 style = "text-align:center; margin-top: 6%; margin-left:5">SignIn Form</h1>
+		<hr>
+		<form action = "SignInServlet" method = "POST">
+		<ul ><h2 style = "text-align:center; margin-left:-11%">SignIn to the System</h2> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			Email : <input type = "text" name = "email" id = "email" style = "margin-left:6%;"><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			Password : <input type = "text" name = "password" id = "password" style = "margin-top:3%;margin-left:0.5%">
+		</ul>	
+		<input type = "submit" value = "SignIn" onClick = "return check()" style = "margin-left:44%; margin-top:3%">
+		<a href = "SignUp.html" style = "text-decoration:none;color:black"><button style = "margin-left:38%; margin-top:3%; color:black">SignUp Instead</a></button>	
+		</form>
+	</body>
+</html>
