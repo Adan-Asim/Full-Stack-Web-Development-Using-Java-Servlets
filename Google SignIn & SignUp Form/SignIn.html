@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<title>Google Sign In Form</title>
+		<style>
+			.th
+			{
+				color:black;
+				width: 47%;
+				height: 80%;
+				margin-top: 9%;
+				margin-left: 35%;	
+			}
+			.input
+			{
+				font-size: 16px;
+				font_family: Arial, Helvetica, sans-serif;
+				height: 9%;
+			}
+			.text
+			{
+				font-family: arial;
+				margin-top:.5%
+	
+			}
+			.error
+			{
+				color: white;
+				margin-top:-6.7%;
+				margin-left: 68%;
+			}
+		</style>
+		<script>
+			function checks()
+			{
+										//as '@gmail.com' is added by the code itself, only username is inputted from the user so its check not applied
+				if(document.getElementById("uname1").value == "")			
+				{
+					document.getElementById('p1').style = "color: Red"; 
+					return false;
+				}	
+				else
+				{
+					document.getElementById('p1').style = "color: White"; 
+				}	
+
+				if(document.getElementById("password").value == "")
+				{
+					document.getElementById('p1').style = "color: Red;margin-top:-3%"; 
+					return false;
+				}	
+				else
+				{
+						document.getElementById('p3').style = "color: White;margin-top:-3%"; 	
+				}	
+				return true;
+			}	
+			
+			function checkUN(event)			//as '@gmail.com' is added by the code itself, only username is inputted from the user so only limited check is applied
+			{
+				key = event.key;
+				if(("@").indexOf(key) > -1 )
+					return false;		
+				else
+					return true;
+			}		
+		</script>
+	</head>
+
+	<body class = "th">
+		<h1 style= "font-family: arial;  font-size:  28px; margin-left: 1%; color:Blue;"> G <span style = "color:Red;margin-left:-1.5%"> o <span style = "color:Orange; margin-left:-1.5%"> o <span style = "color:Blue;margin-left:-1.5%"> g <span style = "color:Green;margin-left:-1.5%"> l <span style = "color:Red;margin-left:-1.5%"> e </h1>
+		<h1 style= "font-family: arial;  font-size:  28px; margin-left: 1%;"> Sign In</h1>
+		<form action = "SignIn" method = "POST">
+			<input type = "text"; id = "uname1"; name = "uname1" placeholder = "   Username"; class = "input" style = "margin-left:1%;marin-top: -3; width: 63%;" onKeyPress = "return checkUN(event)"/>
+`			<input  type = "text"; id = "uname2"; value= "@gmail.com" class = "input" style="margin-left: 46%;white;margin-top:-7.1%;width: 18%"; disabled/><p id = "p1" class = "error">Error, field cannot be empty</p> 
+			<input  type = "text"; id = "password"; name = "password"; placeholder = "   Password"; class = "input" style="margin-left:1%;margin-top: 7%;height: 9%;width:63%;margin-bottom:11%"/><p id = "p1" class = "error">Error, field cannot be empty</p> 
+			<a href="SignUp.html" class = "text" style = "font-size:16px;color:blue;text-decoration: none;margin-left:01%;" > <b>Sign Up instead</b></a>
+			<input type = "submit" value = "Next" style ="margin-left:26.5%;margin-top:-6%;border-radius: 7%;background-color:blue;color:white;height:45;width:110;font-size:18px" onclick = "return checks()">			
+			
+		</form>
+	</body>
+</html>	
