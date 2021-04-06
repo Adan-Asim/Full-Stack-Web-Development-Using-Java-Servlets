@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app>
+
+	<servlet>
+		<servlet-name>s1</servlet-name>
+		<servlet-class>SignUpServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>s1</servlet-name>
+		<url-pattern>/SignUpServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>s2</servlet-name>
+		<servlet-class>SignInServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>s2</servlet-name>
+		<url-pattern>/SignInServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>s3</servlet-name>
+		<servlet-class>MainServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>s3</servlet-name>
+		<url-pattern>/MainServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>s4</servlet-name>
+		<servlet-class>AddCourse</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>s4</servlet-name>
+		<url-pattern>/AddCourse</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>s5</servlet-name>
+		<servlet-class>AssignTeacher</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>s5</servlet-name>
+		<url-pattern>/AssignTeacher</url-pattern>
+	</servlet-mapping>
+
+	 <servlet>
+		<servlet-name>s6</servlet-name>
+		<servlet-class>AdminServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>s6</servlet-name>
+		<url-pattern>/AdminServlet</url-pattern>
+	</servlet-mapping>
+</web-app>
