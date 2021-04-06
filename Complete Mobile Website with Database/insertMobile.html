@@ -1,0 +1,52 @@
+<html>
+	<head>	
+		<title> insertMobile </title>
+		<style>
+			body
+			{
+				border: 1px solid white;
+				width: 30%;
+				height: 49%;
+				margin-top: 11%;
+				margin-left: 5%;	
+				padding-left:-0.8%;
+				background-image:url('bg1.jpg');
+     				background-size:cover;
+				color:white;
+			}
+		</style>
+		<script>
+			function check()
+			{
+				if(document.getElementById("name").value == "")
+				{
+					alert("Company name cannot be left empty");
+					return false;
+				}	
+				if(document.getElementById("model").value == "")
+				{
+					alert("Model cannot be left empty");
+					return false;
+				}	
+				if(document.getElementById("price").value =="" || document.getElementById("price").value < 0 )	
+				{
+					alert("Enter a valid price please");
+					return false;
+				}
+				return true;	
+			}	
+		</script>
+	</head>
+	<body>
+		<h1 style = "text-align:center; margin-top: 2.5%">Mobile database website</h1>
+		<hr>
+		<form action = "insertMobile" method = "GET">
+		<ul ><h2 style = "text-align:center margin-top:-0%; margin-left:1%">Insert mobile data into database</h2> 
+			Company Name: <input type = "text" id = "name" name = "name" style = "margin-left: -0%; font-size: 115%; margin-top: -2%;"/><br>
+			Model: <input type = "text" id = "model" name = "model" style = "margin-left: 17%; font-size: 115%; margin-top: 2%"/><br>
+			Price: <input type = "number" id = "price" name = "price" style = "margin-left: 19%;font-size: 115%; margin-top: 2%"/>
+		</ul>	
+		<input type = "submit" value = "Save" onClick = "return check()" style = "margin-left:43%; margin-top:3%">	
+		</form>
+	</body>
+</html>

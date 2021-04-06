@@ -1,0 +1,46 @@
+<html>
+	<head>	
+		<title> searchMobile </title>
+		<style>
+			body
+			{
+				border: 1px solid white;
+				width: 30%;
+				height: 43%;
+				margin-top: 13%;
+				margin-left: 5%;	
+				padding-left:-0.8%;
+				background-image:url('bg1.jpg');
+     				background-size:cover;
+				color:white;
+			}
+		</style>
+		<script>
+			function check()
+			{
+				if(document.getElementById("name").value == "")
+				{
+					alert("Company name cannot be left empty");
+					return false;
+				}	
+				if(document.getElementById("model").value == "")
+				{
+					alert("Model cannot be left empty");
+					return false;
+				}	
+				return true;	
+			}	
+		</script>
+	</head>
+	<body>
+		<h1 style = "text-align:center; margin-top: 2.5%">Mobile database website</h1>
+		<hr>
+		<form action = "searchMobile" method = "GET">
+		<ul ><h2 style = "text-align:center margin-top:-0%; margin-left:0.5%">Search mobile from the database</h2> 
+			Company Name: <input type = "text" id = "name" name = "name" style = "margin-left: -0%; font-size: 115%; margin-top: -2%;"/><br>
+			Model: <input type = "text" id = "model" name = "model" style = "margin-left: 17%; font-size: 115%; margin-top: 2%"/><br>
+		</ul>	
+		<input type = "submit" value = "Search" onClick = "return check()" style = "margin-left:43%; margin-top:3%">	
+		</form>
+	</body>
+</html>
