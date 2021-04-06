@@ -1,0 +1,111 @@
+<html>
+	<head>
+		<title>Google Sign Up Form</title>
+		<style>
+			.th
+			{
+				color:black;
+				width: 47%;
+				height: 80%;
+				margin-top: 6%;
+				margin-left: 32%;	
+			}
+			.input
+			{
+				font-size: 16px;
+				font_family: Arial, Helvetica, sans-serif;
+				height: 9%;
+			}
+			.text
+			{
+				font-family: arial;
+				margin-top:.5%
+	
+			}
+			.icon
+			{
+				height: 9%;
+				width: 9%;
+				margin-left:3%;
+				float: center;	
+			}
+			.error
+			{
+				color: white;
+				margin-top:-6.7%;
+				margin-left: 68%;
+			}
+		</style>
+		<script>
+			function checks()
+			{
+				if(document.getElementById("fname").value == "" || document.getElementById("lname").value == "")
+				{
+					document.getElementById('p1').style = "color: Red;margin-top:-5%"; 
+					return false;
+				}	
+				else
+				{
+					document.getElementById('p1').style = "color: White;margin-top:-5%"; 
+				}
+			
+				if(document.getElementById("uname1").value == "")			
+				{
+					document.getElementById('p2').style = "color: Red"; 
+					return false;
+				}	
+				else
+				{
+					document.getElementById('p2').style = "color: White"; 
+				}	
+
+				if(document.getElementById("password").value == "" || document.getElementById("confirm").value == "")
+				{
+					document.getElementById('p3').style = "color: Red;margin-top:-3%"; 
+					return false;
+				}	
+				else
+				{
+					if(!(document.getElementById("password").value == document.getElementById("confirm").value))
+					{
+						document.getElementById('p3').innerHTML = "Password doesnot match";
+						document.getElementById('p3').style = "color: Red;margin-top:-3%";
+						return false;
+					}
+					else
+					{
+						document.getElementById('p3').style = "color: White;margin-top:-3%"; 
+					}	
+				}	
+				return true;
+			}	
+			
+			function checkUN(event)			//as '@gmail.com' is added by the code itself, only username is inputted from the user so only limited check is applied
+			{
+				key = event.key;
+				if(("@").indexOf(key) > -1 )
+					return false;		
+				else
+					return true;
+			}
+		</script>
+	</head>
+
+	<body class = "th">
+		<h1 style= "font-family: arial;  font-size:  28px; margin-left: 1%; color:Blue;"> G <span style = "color:Red;margin-left:-1.5%"> o <span style = "color:Orange; margin-left:-1.5%"> o <span style = "color:Blue;margin-left:-1.5%"> g <span style = "color:Green;margin-left:-1.5%"> l <span style = "color:Red;margin-left:-1.5%"> e </h1>
+		<h1 style= "font-family: arial;  font-size:  28px; margin-left: 1%;"> Create your Google Account</h1>
+		<form action = "SignUp" method = "POST">
+			<input  type = "text"; id = "fname"; name = "fname"; placeholder = "   First name"; class = "input" style="margin-left: 1%;margin-top: 3%"/>
+			<input  type = "text"; id = "lname"; name = "lname"; placeholder = "   Last name"; class = "input" style="margin-left: 1.5%;margin-top:-9.8%"/><p id = "p1" class = "error" style = "margin-top:-5%">Error, field cannot be empty</p> 
+			<input  type = "text"; id = "uname1"; name = "uname1"; placeholder = "   Username "; class = "input" style="margin-left: 1%;margin-top:3%;width: 65.5%;" onKeyPress = "return checkUN(event)"/><p id = "p2" class = "error" >Error, field cannot be empty</p> 
+			<input  type = "text"; id = "uname2"; name = "uname2"; value= "@gmail.com"; class = "input" style="margin-left: 50%;margin-top:-5.6%;width: 16.5%;" disabled/>
+			<p class = "text" style = "margin-left:3%;">You can use letters, numbers & periods </p>
+			<input  type = "text"; id = "password"; name = "password"; placeholder = "   Password"; class = "input" style="margin-left: 01%;margin-top: 2%;height: 9%;width:31.5%;margin-bottom:-10.8%"/>
+			<input  type = "text"; id = "confirm"; placeholder = "   Confirm"; class = "input" style="margin-left:1.7%;width:32%;height: 9%;margin-bottom:-8.5%;margin-top: 1.8%"/><p id = "p3" class = "error" style = "margin-top:-3%">Error, field cannot be empty</p> 
+			<p class = "text" style = "font-size:16px;margin-left:3%;margin-bottom:8%;margin-top: 3%;" > Use 8 or more characters with a mix of letters, numbers </p>
+			<p class = "text" style = "font-size:16px;margin-left:3%;margin-bottom:6%;margin-top: -7.8%;" > symbols</p>
+			<a href="SignIn.html" class = "text" style = "font-size:16px;color:blue;text-decoration: none;margin-left:01%;" > <b>Sign in instead</b></a>
+			<input type = "submit" value = "Next" style ="margin-left:28%;margin-top:-6%;border-radius: 7%;background-color:blue;color:white;height:45;width:110;font-size:18px" onclick = "return checks()">			
+		</form>
+	</body>
+</html>	
