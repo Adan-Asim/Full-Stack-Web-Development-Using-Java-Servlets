@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app>
+
+	<servlet>
+		<servlet-name>insertMobile</servlet-name>
+		<servlet-class>insertMobile</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>insertMobile</servlet-name>
+		<url-pattern>/insertMobile</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>searchMobile</servlet-name>
+		<servlet-class>searchMobile</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>searchMobile</servlet-name>
+		<url-pattern>/searchMobile</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>mobileInfo</servlet-name>
+		<servlet-class>mobileInfo</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>mobileInfo</servlet-name>
+		<url-pattern>/mobileInfo</url-pattern>
+	</servlet-mapping>
+
+</web-app>
